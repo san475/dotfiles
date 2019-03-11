@@ -1,0 +1,67 @@
+!Xft.antialias: true
+
+! Extensions
+URxvt.perl-ext-common: clipboard
+
+! Clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+URxvt.keysym.C-l: command:\033c
+
+! Resize-font   
+!URxvt.keysym.C-Down: resize-font:smaller
+!URxvt.keysym.C-Up: resize-font:bigger
+
+
+URxvt*scrollBar: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: false
+
+URxvt*depth: 32
+URxvt*background: [65]black
+
+!URxvt.letterSpace: -7
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.font: xft:Inconsolata:pixelsize=15, style=bold \
+            xft:DejaVuSansMono:pixelsize=15, style=bold
+
+! special
+ URxvt*foreground:   #c5c8c6
+ URxvt*cursorColor:  #c5c8c6
+
+! ! black
+ URxvt*color0:       #1d1f21
+ URxvt*color8:       #969896
+
+! ! red
+ URxvt*color1:       #cd342b
+ URxvt*color9:       #cd342b
+
+! ! green
+ URxvt*color2:       #00BD2A
+ URxvt*color10:      #00BD2A
+!URxvt*color10:      #198844
+
+! ! yellow
+ URxvt*color3:       #fba922
+ URxvt*color11:      #fba922
+
+! ! blue
+ URxvt*color4:       #3971ed
+ URxvt*color12:      #3971ed
+
+! ! magenta
+ URxvt*color5:       #a36ac7
+ URxvt*color13:      #a36ac7
+
+! ! cyan
+ URxvt*color6:       #39b4ec
+ URxvt*color14:      #39b4ec
+
+! ! white
+! URxvt*color7:       #c5c8c6
+ URxvt*color7:       #ffffff
+ URxvt*color15: #ffffff
