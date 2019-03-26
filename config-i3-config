@@ -7,18 +7,29 @@
 
 # MY STUFF
 #
+
+# Set monitors
+exec --no-startup-id xrandr --output VGA-1 --right-of LVDS-1 --auto
+
+set $firstmonitor LVDS-1
+set $secondmonitor VGA-1
+
+workspace 5 output $secondmonitor
+workspace 6 output $secondmonitor
+
 # compton start
 exec --no-startup-id compton
 # nm-applet start
 exec --no-startup-id nm-applet
+# disable touchpad
+exec --no-startup-id exec synclient TouchpadOff=1
 
-exec --no-startup-id /home/narf/.fehrandbg
 
 # gaps
 # 
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 # edit gaps
 #
@@ -29,13 +40,14 @@ bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
 #
+
 ### Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 #
 
-## Sreen brightness controls
+## Screen brightness controls
 
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessUp --no-startup-id exec /home/narf/scripts/brightness.sh #edit screen brightness
@@ -56,6 +68,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term urxvt
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -76,7 +89,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec $term
 # start a terminal in current dir
 #bindsym $mod+Shift+Return exec rxvt
 
@@ -171,8 +184,17 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+##luke smith resize steal
 
+bindsym $mod+u resize shrink width 10 px or 10ppt
+
+bindsym $mod+i resize shrink height 10 px or 10ppt
+
+bindsym $mod+o resize grow height 10 px or 10ppt
+
+bindsym $mod+p resize grow width 10 px or 10ppt
 # resize window (you can also use the mouse for that)
+# OUTDATED TODO REMOVE
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 

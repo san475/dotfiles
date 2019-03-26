@@ -1,5 +1,6 @@
 set nocompatible    "sets vim defaults
 
+set encoding=utf-8  "unicode
 
 set number  "line numbers
 set relativenumber  "relative line numbers
@@ -12,7 +13,7 @@ syntax on
 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 
 set ai
 
