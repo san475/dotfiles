@@ -54,6 +54,4 @@ inoremap {}	{}
 "inoremap ()	()
 
 "aliases
-iabbr syso System.out.printf("
-iab com /*<CR><CR>/<Up>
 iab makemeafile ##<CR>#autocreated makefile<CR>TARGET: DEPENDENCY<CR>javac TARGET<CR><CR>#<CR><BS>clean:<CR>rm -f TARGET<CR><BS>#<CR>#
