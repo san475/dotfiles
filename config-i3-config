@@ -9,7 +9,7 @@
 #
 
 # Set monitors
-exec --no-startup-id xrandr --output VGA-1 --right-of LVDS-1 --auto
+bindsym $mod+Shift+m exec --no-startup-id xrandr --output VGA-1 --right-of LVDS-1 --auto
 
 set $firstmonitor LVDS-1
 set $secondmonitor VGA-1
@@ -22,7 +22,7 @@ exec --no-startup-id compton
 # nm-applet start
 exec --no-startup-id nm-applet
 # disable touchpad
-exec --no-startup-id exec synclient TouchpadOff=1
+exec --no-startup-id synclient TouchpadOff=1
 
 
 # wallaper 
@@ -51,18 +51,18 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 ## Screen brightness controls
 
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessUp --no-startup-id exec /home/narf/scripts/brightness.sh #edit screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 ## Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 #
 ## Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioStop exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 
 # i3 config file (v4)
@@ -91,7 +91,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec --no-startup-id $term
 # start a terminal in current dir
 #bindsym $mod+Shift+Return exec rxvt
 

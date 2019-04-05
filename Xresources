@@ -1,5 +1,11 @@
-!Xft.antialias: true
-
+! font stuff
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 100
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 ! Extensions
 URxvt.perl-ext-common: clipboard
 
@@ -30,23 +36,34 @@ URxvt.secondaryScroll: 0
 !URxvt.font: xft:Inconsolata:pixelsize=15, style=bold \
 !            xft:DejaVuSansMono:pixelsize=15, style=bold
 
-URxvt.font: xft:Inconsolata:size=11, style=bold
+!URxvt.font: xft:SourceCodePro-Regular:size=11
+URxvt.font: xft:Inconsolata-Regular:size=11, style=bold
+!URxvt.font: xft:Source Code Pro:size=11, style=bold
 
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
+!ALMOST BLACK
 #define base00 #181818
 #define base01 #282828
 #define base02 #383838
+!DARK GREY
 #define base03 #585858
+!GREY
 #define base04 #b8b8b8
 #define base05 #d8d8d8
 #define base06 #e8e8e8
+!WHITE
 #define base07 #f8f8f8
-#define base08 #ab4642
+!RED
+#define base08 #ab4642 
+!ORANGE
 #define base09 #dc9656
+!YELLOW
 #define base0A #f7ca88
+!GREEN
 #define base0B #a1b56c
+!BLUE
 #define base0C #86c1b9
 #define base0D #7cafc2
 #define base0E #ba8baf
