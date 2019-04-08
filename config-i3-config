@@ -31,7 +31,7 @@ bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill /home/narf/p
 # 
 for_window [class="^.*"] border pixel 2
 gaps inner 5
-gaps outer 5
+gaps outer 0
 
 # edit gaps
 #
@@ -43,17 +43,20 @@ bindsym $mod+Shift+z gaps outer current minus 5
 
 #
 
+#curvol=$(pactl list | grep Volume | awk 'NR==1{print $5, "| "  $7 $8}') && notify-send "Volume: $curvol"
 ### Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/scripts/volumeNotif.sh +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/scripts/volumeNotif.sh -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 #
 
 ## Screen brightness controls
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessUp --no-startup-id exec /home/narf/scripts/brightness.sh #edit screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 ## Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
