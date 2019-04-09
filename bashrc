@@ -18,6 +18,7 @@ export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;48m\]\u\[$(tput sgr0)\]
 
 # Personal Aliases
 alias v='vim'
+#alias vim='nvim'
 alias vc='vim ~/.vimrc'
 alias bashc='vim ~/.bashrc'
 alias bashs='source ~/.bashrc'
