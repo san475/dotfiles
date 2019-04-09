@@ -18,8 +18,8 @@ set noexpandtab
 set ai
 
 "adds filename to status line
-set laststatus=2
-set statusline+=%F
+"set laststatus=2
+"set statusline+=%F
 
 "turn off esc keys to remove delay in O
 set noesckeys
