@@ -10,6 +10,7 @@
 
 # Set monitors
 bindsym $mod+Shift+m exec --no-startup-id xrandr --output VGA1 --right-of LVDS1 --auto
+bindsym $mod+Shift+M exec --no-startup-id xrandr --output VGA1 --auto
 
 set $firstmonitor LVDS-1
 set $secondmonitor VGA-1
