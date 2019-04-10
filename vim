@@ -15,6 +15,7 @@
 "" 7. Key bindings
 ""
 
+
 """"""""""""
 "" Compatibility
 set nocompatible    "sets vim defaults
@@ -26,36 +27,54 @@ set noesckeys
 
 """"""""""""
 "" Preferences
-set hlsearch
+set hlsearch	"highlight searches
+set incsearch	"incremental search
 set number  "line numbers
 set relativenumber  "relative line numbers
+set splitbelow splitright	"set splits to make more sense
+set so=7	"move screen when cursor is 7 above or below
+set autochdir	"set relative directory to current file
+
+set wildmode=longest,list,full	"show possible options on <tab>
+set wildignore+=*.o,*~,*.pyc,.git/*
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+
 
 """"""""""""
 "" Syntax
 filetype indent on	"Detect filetype and indent
 syntax on
 
+
 """"""""""""
 "" Colorscheme
-colorscheme peachpuff 
+"colorscheme peachpuff 
+
 
 """"""""""""
 "" Tabs & Indentation
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
+set smarttab
 
 set autoindent
 set smartindent
-
+set wrap
 
 
 """"""""""""
 "" Aliases
 iab makemeafile ##<CR>#autocreated makefile<CR>TARGET: DEPENDENCY<CR>javac TARGET<CR><CR>#<CR><BS>clean:<CR>rm -f TARGET<CR><BS>#<CR>#
 
+
 """"""""""""
 "" Key bindings
+
+"binds gf to open in split
+nnoremap gf :vertical wincmd f<CR>
+
 "simplifies split nav
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
