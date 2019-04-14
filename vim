@@ -1,4 +1,11 @@
+""        _                    
+"" __   _(_)_ __ ___  _ __ ___ 
+"" \ \ / / | '_ ` _ \| '__/ __|
+""  \ V /| | | | | | | | | (__ 
+""   \_/ |_|_| |_| |_|_|  \___|
+""                             
 """""""""""""""""""""
+""
 "" ~/.vimrc
 "" Author: Francisco Esteve
 ""
@@ -33,9 +40,9 @@ set number  "line numbers
 set relativenumber  "relative line numbers
 set splitbelow splitright	"set splits to make more sense
 set so=7	"move screen when cursor is 7 above or below
-set autochdir	"set relative directory to current file
 
-set wildmode=longest,list,full	"show possible options on <tab>
+set wildmenu
+"set wildmode=longest,list,full	"show possible options on <tab>
 set wildignore+=*.o,*~,*.pyc,.git/*
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
@@ -107,4 +114,3 @@ ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
-

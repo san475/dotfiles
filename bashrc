@@ -5,6 +5,7 @@
 #############################
 
 # exports
+export PATH=$PATH:/home/narf/documents/android-studio/bin/
 export EDITOR='vim'
 
 # auto cd
@@ -18,15 +19,15 @@ export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;48m\]\u\[$(tput sgr0)\]
 
 # Personal Aliases
 alias v='vim'
-#alias vim='nvim'
 alias vc='vim ~/.vimrc'
 alias bashc='vim ~/.bashrc'
 alias bashs='source ~/.bashrc'
 alias termc='vim ~/.Xresources'
 alias terms='xrdb ~/.Xresources'
 alias ic='vim ~/.config/i3/config'
+alias tcd='$TERM & disown'
+alias pacman='sudo pacman'
 
-alias brightness='~/scripts/brightness'
 alias vcuvpn='sudo ~/scripts/vcuvpn.sh'
 
 # Shameless steal from mate
@@ -41,7 +42,6 @@ alias egrep='egrep --color=auto'
 alias mkdir='mkdir -pv'
 alias ccat='highlight --out-format=ansi'
 alias starwars='telnet towel.blinkenlights.nl'
-alias pacman='sudo pacman'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
