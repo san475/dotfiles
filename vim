@@ -47,6 +47,10 @@ set wildignore+=*.o,*~,*.pyc,.git/*
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 
+" Removes beeping
+set visualbell
+set t_vb=
+
 
 """"""""""""
 "" Syntax
