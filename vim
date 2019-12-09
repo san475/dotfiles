@@ -1,12 +1,11 @@
-""        _                    
-"" __   _(_)_ __ ___  _ __ ___ 
-"" \ \ / / | '_ ` _ \| '__/ __|
-""  \ V /| | | | | | | | | (__ 
-""   \_/ |_|_| |_| |_|_|  \___|
-""                             
-"""""""""""""""""""""
+""         _                    
+""  __   _(_)_ __ ___  _ __ ___ 
+""  \ \ / / | '_ ` _ \| '__/ __|
+""   \ V /| | | | | | | | | (__ 
+""    \_/ |_|_| |_| |_|_|  \___|
 ""
-"" ~/.vimrc
+"""""""""""""""""""""""""""""""""
+""
 "" Author: Francisco Esteve
 ""
 """""""""""""""""""""
@@ -30,6 +29,7 @@ set encoding=utf-8  "unicode
 " Fix delay on 'O'
 set noesckeys
 "set timeoutlen=100
+execute pathogen#infect()
 
 
 """"""""""""
@@ -61,8 +61,8 @@ syntax on
 
 """"""""""""
 "" Tabs & Indentation
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set noexpandtab
 set smarttab
 
@@ -75,6 +75,7 @@ set wrap
 "" Aliases
 iab makemeafile ##<CR>#autocreated makefile<CR>TARGET: DEPENDENCY<CR>javac TARGET<CR><CR>#<CR><BS>clean:<CR>rm -f TARGET<CR><BS>#<CR>#
 
+command Wm :make
 
 """"""""""""
 "" Key bindings

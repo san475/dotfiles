@@ -1,12 +1,18 @@
 #
+#     _               _              
+#    | |__   __ _ ___| |__  _ __ ___ 
+#    | '_ \ / _` / __| '_ \| '__/ __|
+#   _| |_) | (_| \__ \ | | | | | (__ 
+#  (_)_.__/ \__,_|___/_| |_|_|  \___|
+#                                  
+#####################################
 #
-# ~/.bashrc
-#
-#############################
+#	Author: Francisco Esteve
 
 # exports
 export PATH=$PATH:/home/narf/documents/android-studio/bin/
 export EDITOR='vim'
+export TERM='st'
 
 # auto cd
 shopt -s autocd
@@ -25,8 +31,10 @@ alias bashs='source ~/.bashrc'
 alias termc='vim ~/.Xresources'
 alias terms='xrdb ~/.Xresources'
 alias ic='vim ~/.config/i3/config'
+alias isc='vim ~/.config/i3status/config'
 alias tcd='$TERM & disown'
 alias pacman='sudo pacman'
+alias calc='mate-calc-cmd'
 
 alias vcuvpn='sudo ~/scripts/vcuvpn.sh'
 
