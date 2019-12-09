@@ -68,3 +68,4 @@ cd()
     [[ $# -eq 0 ]] && return
     builtin cd "$@"
 }
+exec zsh

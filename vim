@@ -41,6 +41,8 @@ set relativenumber  "relative line numbers
 set splitbelow splitright	"set splits to make more sense
 set so=7	"move screen when cursor is 7 above or below
 
+hi MatchParen ctermbg=blue guibg=lightblue term=none cterm=none gui=italic
+
 set wildmenu
 "set wildmode=longest,list,full	"show possible options on <tab>
 set wildignore+=*.o,*~,*.pyc,.git/*
