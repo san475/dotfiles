@@ -5,22 +5,19 @@
 ""    \_/ |_|_| |_| |_|_|  \___|
 ""
 """""""""""""""""""""""""""""""""
-""
 "" Author: Francisco Esteve
 ""
 """""""""""""""""""""
-""
 "" Table of Contents
 ""
-"" 1. Compatibility
-"" 2. Preferences
-"" 3. Syntax
-"" 4. Colorscheme
-"" 5. Tabs & Indentation
-"" 6. Aliases
-"" 7. Key bindings
+"" 			1. Compatibility
+"" 			2. Preferences
+"" 			3. Syntax
+""			4. Colorscheme
+"" 			5. Tabs & Indentation
+"" 			6. Aliases
+"" 			7. Key bindings
 ""
-
 
 """"""""""""
 "" Compatibility
@@ -30,7 +27,18 @@ set encoding=utf-8  "unicode
 set noesckeys
 "set timeoutlen=100
 execute pathogen#infect()
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+	  let col = col('.') - 1
+		  return !col || getline('.')[col - 1]  =~# '\s'
+		endfunction
 
 """"""""""""
 "" Preferences
@@ -63,6 +71,9 @@ syntax on
 """"""""""""
 "" Colorscheme
 "colorscheme peachpuff 
+set t_Co=256
+"set t_ut=
+colorscheme codedark
 
 
 """"""""""""
