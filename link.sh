@@ -19,10 +19,16 @@ if test -f "../.config/i3/config"; then
 	echo "Found existing i3 config, moving existing config to config.bak"
 	mv ../.config/i3/config ../.config/i3/config.bak
 fi
+if test -f "../.config/i3status/config"; then
+	echo "Found existing i3 status config, moving existing config to config.bak"
+	mv ../.config/i3status/config ../.config/i3status/config.bak
+fi
 ln vim ../.vimrc
 ln bashrc ../.bashrc
 ln Xresources ../.Xresources
 ln zshrc ../.zshrc
 mkdir -p ../.config/i3
+mkdir -p ../.config/i3status
 ln config-i3-config ../.config/i3/config
+ln config-i3status-config ../.config/i3status/config
 
