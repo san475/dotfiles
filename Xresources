@@ -108,7 +108,7 @@ URxvt.font: xft:Inconsolata-Regular:size=11, style=bold
 #define base0F #ffffff
 
 #define background_opacity 95
-*foreground:   base05
+!*foreground:   base05
 #ifdef background_opacity
 !*background:   [background_opacity]base00
 *background:   base00

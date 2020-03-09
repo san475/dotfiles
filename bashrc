@@ -10,7 +10,7 @@
 #	Author: Francisco Esteve
 
 # exports
-export PATH=$PATH:/home/narf/documents/android-studio/bin/
+#export PATH=$PATH:/home/narf/documents/android-studio/bin/
 export EDITOR='vim'
 export TERM='st'
 
