@@ -3,7 +3,12 @@
 # |_  / __| '_ \| '__/ __|
  # / /\__ \ | | | | | (__ 
 # /___|___/_| |_|_|  \___|
-                        
+##########################
+#
+# Author: Francisco Esteve
+#                        
+
+
 # Colors and Prompt
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "

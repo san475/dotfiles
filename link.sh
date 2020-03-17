@@ -1,34 +1,46 @@
 #!/bin/bash
-if test -f "../.vimrc"; then
-	echo "Found existing .vimrc, moving existing .vimrc to .vimrc.bak"
-	mv ../.vimrc ../.vimrc.bak
+
+# Check if exists and is same
+if diff "../.vimrc" "vim" > /dev/null; then
+	echo "Found matching .vimrc, continuing."
+else
+	if test -f "../.vimrc"; then
+		echo "Found existing .vimrc, moving existing .vimrc to .vimrc.bak"
+		mv ../.vimrc ../.vimrc.bak
+	fi
+	ln vim ../.vimrc
 fi
-if test -f "../.bashrc"; then
-	echo "Found existing .bashrc, moving existing .bashrc to .bashrc.bak"
-	mv ../.bashrc ../.bashrc.bak
+
+# Check if exists and is same
+if diff "../.bashrc" "bashrc" > /dev/null; then
+	echo "Found matching .bashrc, continuing."
+else
+	if test -f "../.bashrc"; then
+		echo "Found existing .bashrc, moving existing .bashrc to .bashrc.bak"
+		mv ../.bashrc ../.bashrc.bak
+	fi
+	ln bashrc ../.bashrc
 fi
-if test -f "../.Xresources"; then
-	echo "Found existing .Xresources, moving existing .Xresources to .Xresources.bak"
-	mv ../.Xresources ../.Xresources.bak
+
+# Check if exists and is same
+if diff "../.Xresources" "Xresources" > /dev/null; then
+	echo "Found matching .Xresources, continuing."
+else
+	if test -f "../.Xresources"; then
+		echo "Found existing .Xresources, moving existing .Xresources to .Xresources.bak"
+		mv ../.Xresources ../.Xresources.bak
+	fi
+	ln Xresources ../.Xresources
 fi
-if test -f "../.zshrc"; then
-	echo "Found existing .zshrc, moving existing .zshrc to .zshrc.bak"
-	mv ../.zshrc ../.zshrc.bak
+
+# Check if exists and is same
+if diff "../.zshrc" "zshrc" > /dev/null; then
+	echo "Found matching .zshrc, continuing."
+else
+	if test -f "../.zshrc"; then
+		echo "Found existing .zshrc, moving existing .zshrc to .zshrc.bak"
+		mv ../.zshrc ../.zshrc.bak
+	fi
+	ln zshrc ../.zshrc
 fi
-if test -f "../.config/i3/config"; then
-	echo "Found existing i3 config, moving existing config to config.bak"
-	mv ../.config/i3/config ../.config/i3/config.bak
-fi
-if test -f "../.config/i3status/config"; then
-	echo "Found existing i3 status config, moving existing config to config.bak"
-	mv ../.config/i3status/config ../.config/i3status/config.bak
-fi
-ln vim ../.vimrc
-ln bashrc ../.bashrc
-ln Xresources ../.Xresources
-ln zshrc ../.zshrc
-mkdir -p ../.config/i3
-mkdir -p ../.config/i3status
-ln config-i3-config ../.config/i3/config
-ln config-i3status-config ../.config/i3status/config
 
