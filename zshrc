@@ -21,7 +21,6 @@ export TERM='st'
 # History in cache directory
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
 
 # Personal Aliases
 alias v='vim'
@@ -36,8 +35,6 @@ alias isc='vim ~/.config/i3status/config'
 alias tcd='$TERM & disown'
 alias pacman='sudo pacman'
 alias calc='mate-calc-cmd'
-
-alias vcuvpn='sudo ~/scripts/vcuvpn.sh'
 
 # Shameless steal from mate
 alias ls='ls --color=auto'

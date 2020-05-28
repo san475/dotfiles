@@ -36,8 +36,6 @@ alias tcd='$TERM & disown'
 alias pacman='sudo pacman'
 alias calc='mate-calc-cmd'
 
-alias vcuvpn='sudo ~/scripts/vcuvpn.sh'
-
 # Shameless steal from mate
 alias ls='ls --color=auto'
 alias la='ls --color=auto -a'
@@ -50,17 +48,6 @@ alias egrep='egrep --color=auto'
 alias mkdir='mkdir -pv'
 alias ccat='highlight --out-format=ansi'
 alias starwars='telnet towel.blinkenlights.nl'
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
