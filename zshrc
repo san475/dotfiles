@@ -66,6 +66,20 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+
+# Use fzf to edit file
+fe() {
+	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+		[[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+	local file
+	local dir
+	file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
 	tmp="$(mktemp)"
