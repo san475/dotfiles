@@ -20,13 +20,25 @@
 ""
 
 """"""""""""
+"" Plugins
+
+call plug#begin('~/.vim/plugged')
+""""""""""""
+"" Add Plugin links with Plug <github stuff>
+Plug 'tomasiser/vim-code-dark'
+"Plug 'tomasiser/vim-code-dark'
+"Plug 'tomasiser/vim-code-dark'
+
+call plug#end()
+
+
+""""""""""""
 "" Compatibility
 set nocompatible    "sets vim defaults
 set encoding=utf-8  "unicode
 " Fix delay on 'O'
 set noesckeys
 "set timeoutlen=100
-execute pathogen#infect()
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>

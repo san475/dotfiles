@@ -14,9 +14,9 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # exports
-export PATH=$PATH:/home/narf/documents/android-studio/bin/
+# export PATH=$PATH:/home/narf/documents/android-studio/bin/
 export EDITOR='vim'
-export TERM='st'
+# export TERM='st'
 
 # History in cache directory
 HISTSIZE=10000
@@ -37,9 +37,9 @@ alias pacman='sudo pacman'
 alias calc='mate-calc-cmd'
 
 # Shameless steal from mate
-alias ls='ls --color=auto'
-alias la='ls --color=auto -a'
-alias ll='ls --color=auto -a -l'
+alias ls='ls -G'
+alias la='ls -Ga'
+alias ll='ls -Ga -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
