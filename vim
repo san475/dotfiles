@@ -61,6 +61,11 @@ set wildignore+=*.pdf,*.psd
 set visualbell
 set t_vb=
 
+" Format XML command
+com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+
+nnoremap = :FormatXML<Cr>
+
 
 """"""""""""
 "" Syntax

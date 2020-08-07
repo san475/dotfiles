@@ -11,20 +11,29 @@
 
 # Colors and Prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+PS1="%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$ "
 
 # exports
-export PATH=$PATH:/home/narf/documents/android-studio/bin/
+export PATH=$PATH:
 export EDITOR='vim'
-export TERM='st'
+#export TERM='st'
 
 # History in cache directory
 HISTSIZE=10000
 SAVEHIST=10000
 
+
 # Personal Aliases
+alias creds='vim ~/.aws/credentials'
+alias acreds="vim -c 'norm dG' -c 'norm \"*p' -c 'norm ci[default' -c ':wq' ~/.aws/credentials"
+
 alias v='vim'
 alias vc='vim ~/.vimrc'
+alias gb='git branch'
+alias gs='git status'
+alias gp='git pull'
 alias bashc='vim ~/.bashrc'
 alias zc='vim ~/.zshrc'
 alias bashs='source ~/.bashrc'
@@ -37,9 +46,8 @@ alias pacman='sudo pacman'
 alias calc='mate-calc-cmd'
 
 # Shameless steal from mate
-alias ls='ls --color=auto'
-alias la='ls --color=auto -a'
-alias ll='ls --color=auto -a -l'
+alias la='ls -a'
+alias ll='ls -a -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -66,6 +74,9 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# Reverse inc search
+bindkey '^R' history-incremental-search-backward
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
 	tmp="$(mktemp)"
@@ -82,9 +93,9 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 #startx
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
-fi
+#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+    #exec startx
+#fi
 
 # Cd does not take you home
 cd()
