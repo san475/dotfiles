@@ -44,3 +44,4 @@ else
 	ln zshrc ../.zshrc
 fi
 
+zsh
